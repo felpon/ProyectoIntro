@@ -54,11 +54,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'sistemalogin.urls'
-
+#"C:/Users/pipe2/Desktop/OneDrive - Universidad Técnica Federico Santa María/proyecto/sistemalogin/sistemalogin/Plantilla"
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["C:/Users/pipe2/Desktop/OneDrive - Universidad Técnica Federico Santa María/proyecto/sistemalogin/sistemalogin/Plantilla"],
+        'DIRS': ["sistemalogin/Plantilla"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
