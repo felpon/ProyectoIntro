@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<html>
+    <body>
+    Hola {{nombre_persona}}   
+    <p> Fecha actual:  {{fecha.day}} / {{fecha.month}} / {{fecha.year}} </p>
+    <p><strong> Temas: </strong></p>
+    <p>
+        <ul>
+            {% if temas %}
+                {% for tema in temas%}
+                    <li> {{tema}} </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </p>
+    </body>
+</html>
+{% endblock %}

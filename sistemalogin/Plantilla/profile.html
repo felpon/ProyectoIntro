@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class='container d-flex justify-content-center mt-5 col-md-10 col-xl-8'>
+  <div class="card shadow-4-strong mb-3">
+    <div class="row g-0">
+      <div class="col-md-5">
+        <img src={{ user.profile_pic.url }} alt="..." class="img-fluid rounded" />
+      </div>
+      <div class="col-md-7">
+        <div class="card-body">
+          <div class='row justify-content-center'>
+
+            <h4 class="col-12 card-title text-center mb-4">{{ user.username }} {{user.apellido}}</h4>
+              <a class='btn btn-danger btn-rounded col-5' href="{% url 'logout' %}">Cerrar Sesion </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

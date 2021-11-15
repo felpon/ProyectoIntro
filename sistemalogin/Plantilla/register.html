@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+{%else%}
+	<p></p>
+	<p></p>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-6 offset-md-3">
+				<div class="card">
+					<div class="card-body">	
+						<form class="form" method="post">
+				
+							{% csrf_token %}
+							{{ form.as_p }}
+
+						<button type="submit" id="submit">Registrarse</button> 
+						&nbsp;¿Ya tienes cuenta? Inicia sesion pulsando <a href="/accounts/login/">aqui.</a>
+						</form> 
+					</div>
+				</div>
+			</div>
+		</div>		
+	</div>
+{%endif%}
+{% endblock%}
