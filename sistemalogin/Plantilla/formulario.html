@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block tittle %} {% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<form action="" class="Formulario" method="post"> 
+    {% csrf_token %}
+    <p></p>1.- Psicológicamente ¿Cómo te has sentido esta semana? 
+    {{ form.preg1 }}
+    <p></p>2.- ¿ Te sientes capaz de lograr tus objetivos de esta semana?
+    {{ form.preg2 }}
+    <p></p>3.- ¿Cómo calificarías tu desempeño académico de esta semana? 
+    {{ form.preg3 }}
+    <p></p>4.- ¿Te afecta de manera emocional tu rendimiento académico? 
+    {{ form.preg4 }}
+    <p></p>5.- ¿Te sientes presionado por lo que haces? 
+    {{ form.preg5 }}  
+    <p></p>6.- ¿Has sentido poco interés al realizar ciertas actividades? 
+    {{ form.preg6 }}
+    <p></p>7.- ¿Tienes problemas al momento de concentrarte, ya sea en momentos de ocio o de trabajo? 
+    {{ form.preg7 }}
+    <p></p>8.- ¿Sueles sentir que estás a punto de llorar? 
+    {{ form.preg8 }}
+    <p></p>9.- ¿Qué tanto te cuesta relajarte o tomarte un descanso? 
+    {{ form.preg9 }}  
+    <p></p>10.-¿Te has sentido distraído?
+    {{ form.preg10 }}
+    <p></p>11.-Si la respuesta anterior fue “si” o “mas o menos”¿Afecta en tus quehacer de esta semana?
+    {{ form.preg11 }}
+    <p></p>12.-¿Sientes que tu comportamiento ha mejorado o empeorado esta semana?
+    {{ form.preg12 }}
+    <p></p>13.-¿Has visto alterados tus tiempos de sueño, ya sea en mayor o menor medida? 
+    {{ form.preg13 }}
+    <p></p>14.- ¿Has tenido un buen manejo del tiempo esta semana?
+    {{ form.preg14 }}
+    {{ form.user }}
+    <button type="submit" id="btnEnviar" class="button">Enviar</button>
+</form>
+{% else %}
+    Necesitas estar logeado.
+{% endif %}
+{% endblock %}
