@@ -1,3 +1,4 @@
+from django.forms.forms import Form
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from .forms import UserRegisterForm, Formulario
@@ -31,20 +32,43 @@ def formulario(request):
 		"form": Formulario()
 	}
 	if request.method == "POST":
-		print("a")
 		current_user = get_object_or_404(User, pk=request.user.pk) 
 		form = Formulario(request.POST)
 		if form.is_valid():
-			print(current_user)
 			post = form.save(commit=False)
 			post.user = current_user
 			post.save()
-			messages.success(request, f'Cuestionario enviado y guardado')
-			return redirect('perfil')
+			messages.success(request, f'Cuestionario guardado')
+			return redirect('mensaje')
 		else:
 			form = Formulario()
 
 	return render(request, "formulario.html", data)
+
+def mensaje(request):
+	if authenticate:
+		current_user = get_object_or_404(User, pk=request.user.pk)
+		perfil = Formu.objects.filter(user=current_user)[:1]
+		pregunta = perfil[0]
+		puntaje = 0
+		puntaje += pregunta.preg1
+		puntaje += pregunta.preg2
+		puntaje += pregunta.preg3
+		puntaje += pregunta.preg4
+		puntaje += pregunta.preg5
+		puntaje += pregunta.preg6
+		puntaje += pregunta.preg7
+		puntaje += pregunta.preg8
+		puntaje += pregunta.preg9
+		puntaje += pregunta.preg10
+		puntaje += pregunta.preg11
+		puntaje += pregunta.preg12
+		puntaje += pregunta.preg13
+		puntaje += pregunta.preg14
+		return render(request, "mensaje.html", {"puntaje":puntaje})
+	else:
+		return redirect("home")
+
 
 def	info(request):
 	if authenticate:

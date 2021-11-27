@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block tittle %} {% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {% if puntaje == 0 %}
+            {{puntaje}}   
+        {% elif puntaje == 1 %}
+            a
+        {% else %}
+            Funciona :D
+        {%endif%}
+
+    {% else %}
+        Necesitas iniciar sesión.
+    {% endif %}
+{% endblock %}
