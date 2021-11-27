@@ -31,15 +31,25 @@ def formulario(request):
 		"form": Formulario()
 	}
 	if request.method == "POST":
-		form = Formulario(request.POST) 
-		if form.is_valid:
-			form.save()
-		return redirect('perfil')
-	else:
-		form = Formulario()
+		print("a")
+		current_user = get_object_or_404(User, pk=request.user.pk) 
+		form = Formulario(request.POST)
+		if form.is_valid():
+			print(current_user)
+			post = form.save(commit=False)
+			post.user = current_user
+			post.save()
+			messages.success(request, f'Cuestionario enviado y guardado')
+			return redirect('perfil')
+		else:
+			form = Formulario()
 
 	return render(request, "formulario.html", data)
 
 def	info(request):
-	info = Formu.objects.all()
-	return render(request, "info.html", {"info":info})
+	if authenticate:
+		current_user = get_object_or_404(User, pk=request.user.pk)
+		info = Formu.objects.filter(user=current_user)
+		return render(request, "info.html", {"info":info})
+	else:
+		return redirect("home")

@@ -2,5 +2,11 @@
 {% block tittle %} {% endblock %}
 
 {% block content %}
-  
+    {% if user.is_authenticated %}
+        {% for form in info %}
+            <li>{{form.user }} /// Fecha: {{form.time }} </li>
+        {% endfor %}
+    {% else %}
+        Necesitas iniciar sesión.
+    {% endif %}
 {% endblock %}

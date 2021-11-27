@@ -1,7 +1,7 @@
 import django
 from django.db import models
 from django.contrib.auth.models import User
-from django.forms.models import model_to_dict
+from django.utils import timezone
 
 op1 = [
 	[0, "muy mal"],
@@ -11,9 +11,9 @@ op1 = [
 	[4, "muy bien"],
 ]
 op2 = [
-	[0, "capaz"],
+	[2, "capaz"],
 	[1, "quizas"],
-	[2, "incapaz"],
+	[0, "incapaz"],
 ]
 op3 = [
 	[0, "mucho"],
@@ -74,7 +74,7 @@ op12 = [
 	[2, "Me siento con mucho tiempo libre"],
 ]
 class Formu(models.Model):
-	#user = models.ForeignKey(User, on_delete=models.CASCADE)
+	user = models.ForeignKey(User,null=True,blank=True,on_delete=models.CASCADE)
 	preg1 = models.IntegerField(choices=op1)
 	preg2 = models.IntegerField(choices=op2)
 	preg3 = models.IntegerField(choices=op1)
@@ -89,5 +89,9 @@ class Formu(models.Model):
 	preg12 = models.IntegerField(choices=op10)
 	preg13 = models.IntegerField(choices=op11)
 	preg14 = models.IntegerField(choices=op12)
+	time = models.DateTimeField(default=timezone.now() , null=True,blank=True)
+	class Meta:
+		ordering = ['-time']
 
-
+	def __str__(self):
+		return f'{self.user.username}: {self.time}'
