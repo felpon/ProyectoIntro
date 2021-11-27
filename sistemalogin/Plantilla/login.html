@@ -12,11 +12,18 @@
 				<div class="card">
 					<div class="card-body">	
 						<form class="form" method="post">
-                            {% csrf_token %}
-                            {{ form.as_p }}
-                    
-                            <button type="submit" id="submit">Iniciar Sesion</button> &nbsp;Crea tu cuenta pulsando <a href="/accounts/register/">aqui.</a>
-                        </form> 
+							{% csrf_token %}
+							<div class="mb-3">
+								<label for="id_username" class="form-label">Nombre de usuario:</label>
+								<input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" requiered id="id_username" class="form-control">
+								<div id="emailHelp" class="form-text">Una persona a cargo de la página jamás pedirá tus datos.</div>
+							</div>
+							<div class="mb-3">
+								<label for="id_password" class="form-label">Contraseña:</label>
+								<input type="password" name="password" autocomplete="current-password" requiered id="id_password" class="form-control">
+							</div>
+							<button type="submit" class="btn btn-primary">Iniciar Sesión</button> &nbsp;¿No tienes cuenta? Registrate pulsando <a href="/accounts/register/">aquí.</a>
+						</form>
 					</div>
 				</div>
 			</div>

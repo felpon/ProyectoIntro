@@ -3,7 +3,8 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<form action="" class="Formulario" method="post"> 
+<!--div class="container" style="background-color: white;">
+
     {% csrf_token %}
     <p></p>1.- Psicológicamente ¿Cómo te has sentido esta semana? 
     {{ form.preg1 }}
@@ -33,9 +34,45 @@
     {{ form.preg13 }}
     <p></p>14.- ¿Has tenido un buen manejo del tiempo esta semana?
     {{ form.preg14 }}
-    <button type="submit" id="btnEnviar" class="button">Enviar</button>
-</form>
+    <button type="submit" id="btnEnviar" class="button">Enviar</button-->
+<div class="container" style="background-color: white;">
+    <form action="" class="Formulario" method="post"> 
+        {% csrf_token %}
+        <ol>
+            <li>Psicológicamente ¿Cómo te has sentido esta semana?</li>
+            {{ form.preg1 }}
+            <li>¿ Te sientes capaz de lograr tus objetivos de esta semana?</li>
+            {{ form.preg2 }}
+            <li>¿Cómo calificarías tu desempeño académico de esta semana?</li>
+            {{ form.preg3 }}
+            <li>¿Te afecta de manera emocional tu rendimiento académico?</li>
+            {{ form.preg4 }}
+            <li>¿Te sientes presionado por lo que haces?</li>
+            {{ form.preg5 }}  
+            <li>¿Has sentido poco interés al realizar ciertas actividades?</li> 
+            {{ form.preg6 }}
+            <li>¿Tienes problemas al momento de concentrarte, ya sea en momentos de ocio o de trabajo?</li> 
+            {{ form.preg7 }}
+            <li>¿Sueles sentir que estás a punto de llorar?</li> 
+            {{ form.preg8 }}
+            <li>¿Qué tanto te cuesta relajarte o tomarte un descanso?</li> 
+            {{ form.preg9 }}  
+            <li>¿Te has sentido distraído?</li>
+            {{ form.preg10 }}
+            <li>Si la respuesta anterior fue “si” o “mas o menos”¿Afecta en tus quehacer de esta semana?</li>
+            {{ form.preg11 }}
+            <li>¿Sientes que tu comportamiento ha mejorado o empeorado esta semana?</li>
+            {{ form.preg12 }}
+            <li>¿Has visto alterados tus tiempos de sueño, ya sea en mayor o menor medida?</li> 
+            {{ form.preg13 }}
+            <li>¿Has tenido un buen manejo del tiempo esta semana?</li>
+            {{ form.preg14 }}
+        </ol>
+        
+        <button type="sumbit" id="btnEnviar" class="btn btn-primary active" data-bs-toggle="button" autocomplete="off" aria-pressed="true">Enviar</button>
+    </form>
+</div>
 {% else %}
-    Necesitas estar logeado.
+    Necesitas iniciar sesión.
 {% endif %}
 {% endblock %}
