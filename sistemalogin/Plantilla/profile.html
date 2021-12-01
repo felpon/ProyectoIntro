@@ -23,7 +23,14 @@
           <div class='row justify-content-center'>
             
             <h4 class="col-12 card-title text-center mb-4">{{ user.username }} {{user.apellido}}</h4>
-              <a class='btn btn-danger btn-rounded col-20' href="{% url 'logout' %}">Cerrar Sesion </a>
+            <a class="navbar-brand" href="/info/">
+              <button type="button" class="btn btn-primary" data-mdb-toggle='modal' data-mdb-target='#loginModal'>
+                  <small>Historial de Formularios</small>
+              </button>
+            </a>
+            <a class='btn btn-danger btn-rounded col-5' href="{% url 'logout' %}">
+              <small>Cerrar Sesion</small>  
+            </a>
 
           </div>
         </div>

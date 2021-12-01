@@ -11,19 +11,11 @@
 			<div class="col-12 col-md-6 offset-md-3">
 				<div class="card">
 					<div class="card-body">	
-						<!--form class="form" method="post">
-				
-							{% csrf_token %}
-							{{ form.as_p }}
-
-						<button type="submit" id="submit">Registrarse</button> 
-						&nbsp;¿Ya tienes cuenta? Inicia sesion pulsando <a href="/accounts/login/">aqui.</a>
-						</form-->
 						<form class="form" method="post">			
 							{% csrf_token %}
 							<div class="mb-3">
 								<label for="id_username">Nombre de usuario:</label>
-								<input type="text" name="username" autofocus requiered id="id_username" class="form-control">
+								<input type="username" name="username" requiered id="id_username" class="form-control">
 							</div>
 							<div class="mb-3">
 								<label for="id_password1">Contraseña:</label>

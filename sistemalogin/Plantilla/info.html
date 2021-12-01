@@ -2,5 +2,16 @@
 {% block tittle %} {% endblock %}
 
 {% block content %}
-  
+    {% if user.is_authenticated %}
+    <p></p>
+                    <p></p>
+        {% for form in info %}
+            <div class="container" style="background-color: white;">
+                    <li>{{form.user }} /// Fecha: {{form.time }} </li>
+                
+            </div>
+        {% endfor %}
+    {% else %}
+        Necesitas iniciar sesión.
+    {% endif %}
 {% endblock %}
