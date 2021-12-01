@@ -1,93 +1,210 @@
+<!--versión original-->
 {% extends "base.html" %}
-{% block tittle %} {% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
-<div class="container" style="background-color: white;">
-    <form action="" class="Formulario" method="post"> 
-        {% csrf_token %}
-        <ol>
-            <li>Psicológicamente ¿Cómo te has sentido esta semana?</li>
-            {{ form.preg1 }}
-            <li>¿ Te sientes capaz de lograr tus objetivos de esta semana?</li>
-            {{ form.preg2 }}
-            <li>¿Cómo calificarías tu desempeño académico de esta semana?</li>
-            {{ form.preg3 }}
-            <li>¿Te afecta de manera emocional tu rendimiento académico?</li>
-            {{ form.preg4 }}
-            <li>¿Te sientes presionado por lo que haces?</li>
-            {{ form.preg5 }}  
-            <li>¿Has sentido poco interés al realizar ciertas actividades?</li> 
-            {{ form.preg6 }}
-            <li>¿Tienes problemas al momento de concentrarte, ya sea en momentos de ocio o de trabajo?</li> 
-            {{ form.preg7 }}
-            <li>¿Sueles sentir que estás a punto de llorar?</li> 
-            {{ form.preg8 }}
-            <li>¿Qué tanto te cuesta relajarte o tomarte un descanso?</li> 
-            {{ form.preg9 }}  
-            <li>¿Te has sentido distraído?</li>
-            {{ form.preg10 }}
-            <li>Si la respuesta anterior fue “si” o “mas o menos”¿Afecta en tus quehacer de esta semana?</li>
-            {{ form.preg11 }}
-            <li>¿Sientes que tu comportamiento ha mejorado o empeorado esta semana?</li>
-            {{ form.preg12 }}
-            <li>¿Has visto alterados tus tiempos de sueño, ya sea en mayor o menor medida?</li> 
-            {{ form.preg13 }}
-            <li>¿Has tenido un buen manejo del tiempo esta semana?</li>
-            {{ form.preg14 }}
-        </ol>
-        <button type="submit" id="btnEnviar" class="button">Enviar</button>
-    </form>
+<div class='container d-flex justify-content-center mt-5 col-md-10 col-xl-8'>
+  <div class="card shadow-4-strong mb-3">
+    <div class="row g-0">
+      <div class="col-md-5">
+        <img src={{ user.profile_pic.url }} alt="..." class="img-fluid rounded" />
+      </div>
+      <div class="col-md-7">
+        <div class="card-body">
+          <div class='row justify-content-center'>
+
+            <h4 class="col-12 card-title text-center mb-4">{{ user.username }} {{user.apellido}}</h4>
+              <a class='btn btn-danger btn-rounded col-20' href="{% url 'logout' %}">Cerrar Sesion </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
-{% else %}
-    Necesitas iniciar sesión.
-{% endif %}
+
 {% endblock %}
 
 
 
+<!--version uno-->
+{% extends "base.html" %}
+
+{% block content %}
+<div class='container d-flex justify-content-center mt-5 col-md-10 col-xl-8'>
+  <div class="card shadow-4-strong mb-3">
+    <div class="row g-0">
+      <div class="Layout-sc-nxg1ff-0 profile-image-setting">
+        <div class="Layout-sc-nxg1ff-0 irkKdr">
+          <div class="Layout-sc-nxg1ff-0 SpXOZ">
+            <div>
+              <figure aria-label="Imagen de perfil" class="ScAvatar-sc-12n1gut-0 gNHAJv tw-avatar" dara-a-target="profile-image">
+                <img class="InjectLayout-sc-588ddc-0 hYROTF tw-image tw-image-avatar" alt="Imagen de perfil" src="https://static-cdn.jtvnw.net/jtv_user_pictures/93c9e193-e73f-4d6a-910d-323469ed6936-profile_image-300x300.png">
+        
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
+      <div class="col-md-7">
+        <div class="card-body">
+          <div class='row justify-content-center'>
+            
+            <h4 class="col-12 card-title text-center mb-4">{{ user.username }} {{user.apellido}}</h4>
+              <a class='btn btn-danger btn-rounded col-20' href="{% url 'logout' %}">Cerrar Sesion </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
 
 
+<!--version dos-->
+{% extends "base.html" %}
 
-
-
-
-
-
-
-
-
-
-
-<body data-barba="wrapper">
-    <div class="container" data-barba-namespace="home">
-        <header>
-            <nav class="navbar shadow navbar-light bg-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="/home">
-                        <img
-                            src="https://images.vexels.com/media/users/3/235436/isolated/preview/05054974f2600a2d81f2d21178b26aa0-organos-n-cerebro-6.png"
-                            class="me-2" height="40" alt="" loading="lazy" />
-                            <small>Mental Health</small>
-                    </a>
-                    <a class="navbar-brand" href="/formulario/"><small>Formulario</small></a>
-                    <div class="d-flex align-items-center me-3">
-                        {% if user.is_authenticated %}
-                        <a href={% url 'perfil' %}>
-                            <img src={{ user.profile_pic.url }} class="rounded-circle" height="30" width='30' alt="" loading="lazy" /><small>{{ user.username }}</small>
-                        </a>
-                        {% else %}
-                        <a class="navbar-brand" href="/accounts/login/"><button type="button" class="btn btn-primary" data-mdb-toggle='modal' data-mdb-target='#loginModal'>
-                            <small>Iniciar sesion / Registrarse</small>
-                        </button>
-                        </a>
-                        {% endif %}
+{% block content %}
+<div class='container d-flex justify-content-center mt-5 col-md-10 col-xl-8'>
+    <div class="card shadow-4-strong mb-3">
+        <div class="row g-0">
+            <div class='Layout-sc-nxg1ff-0 eyjcIM'>
+                <div class="Layout-sc-nxg1ff-0 UMCkw settings-row">
+                    <div class="Layout-sc-nxg1ff-0 profile-image-setting">
+                        <div class="Layout-sc-nxg1ff-0 irkKdr">
+                            <div class="Layout-sc-nxg1ff-0 SpXOZ">
+                                <div>
+                                <figure aria-label="Imagen de perfil" class="ScAvatar-sc-12n1gut-0 gNHAJv tw-avatar" dara-a-target="profile-image">
+                                    <img class="InjectLayout-sc-588ddc-0 hYROTF tw-image tw-image-avatar" alt="Imagen de perfil" src="https://static-cdn.jtvnw.net/jtv_user_pictures/93c9e193-e73f-4d6a-910d-323469ed6936-profile_image-300x300.png">
+                            
+                                </figure>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="Layout-sc-nxg1ff-0 bPViAU">
+                            <input type="file" accept=".jpg,.jpeg,.png,.gif" class="profile-image-setting__input">
+                            <div class="Layout-sc-nxg1ff-0 jLsLts">
+                                <button class="ScCoreButton-sc-1qn4ixc-0 ScCoreButtonSecondary-sc-1qn4ixc-2 jGqsfG fSetzA" aria-label="Actualizar imagen de perfil" data-a-target="profile-image-upload-button" data-test-selector="profile-image-setting__upload-button">
+                                    <div class="ScCoreButtonLabel-sc-lh1yxp-0 evtFDZ">
+                                        <div data-a-target="tw-core-button-label-text" class="Layout-sc-nxg1ff-0 eZactg">
+                                            <div class="Layout-sc-nxg1ff-0 kHhUsg">Actualizar imagen de perfil</div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <div class='row justify-content-center'>
+                                
+                                    <h4 class="col-12 card-title text-center mb-4">{{ user.username }} {{user.apellido}}</h4>
+                                    <a class='btn btn-danger btn-rounded col-20' href="{% url 'logout' %}">Cerrar Sesion </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </nav>
-        </header>
+            </div>
+        </div>
     </div>
-</body>
+</div>
+{% endblock %}
 
+<!--random-->
+<div class="tw-drop-zone__content">
+  <input data-a-target="file-picker-input" data-test-selector="file-picker-input" class="InjectLayout-sc-588ddc-0 bFIBHP drag-and-drop-file-picker__input" accept="image/*" type="file">
+  <div class="Layout-sc-nxg1ff-0">
+    <div class="Layout-sc-nxg1ff-0 user-image-uploader__upload-info">
+      <div class="Layout-sc-nxg1ff-0">
+        <figure class="ScFigure-sc-1j5mt50-0 eHOmkT tw-svg">
+          <svg type="color-fill-alt-2" width="20px" height="20px" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" class="ScSvg-sc-1j5mt50-1 ciYOF">
+            <g>
+              <path fill-rule="evenodd" d="M9 11v5h2v-5h5V9h-5V4H9v5H4v2h5z" clip-rule="evenodd"></path>
+            </g>
+          </svg>
+        </figure>
+      </div>
+      <h3 class="CoreText-sc-cpl358-0 gmBqik">Cargar una foto</h3>
+    </div>
+    <div class="Layout-sc-nxg1ff-0 cBqsCV user-image-uploader__upload-recommendation">
+      <h6 class="CoreText-sc-cpl358-0 hfSNcv">Tamaño de imagen recomendado: 1200x480 y menos de 10 MB.</h6>
+    </div>
+  </div>
+</div>
+
+
+<!--version tres-->
+{% extends "base.html" %}
+
+{% block content %}
+<div class='container d-flex justify-content-center mt-5 col-md-10 col-xl-8'>
+    <div class="card shadow-4-strong mb-3">
+        <div class="row g-0">
+            <div class='Layout-sc-nxg1ff-0 eyjcIM'>
+                <div class="Layout-sc-nxg1ff-0 UMCkw settings-row">
+                    <div class="Layout-sc-nxg1ff-0 profile-image-setting">
+                        <div class="Layout-sc-nxg1ff-0 irkKdr">
+                            <div class="Layout-sc-nxg1ff-0 SpXOZ"> 
+                              <div class="tw-drop-zone__content">
+                                <input data-a-target="file-picker-input" data-test-selector="file-picker-input" class="InjectLayout-sc-588ddc-0 bFIBHP drag-and-drop-file-picker__input" accept="image/*" type="file">
+                                <div class="Layout-sc-nxg1ff-0">
+                                  <div class="Layout-sc-nxg1ff-0 user-image-uploader__upload-info">
+                                    <div class="Layout-sc-nxg1ff-0">
+                                      <figure class="ScFigure-sc-1j5mt50-0 eHOmkT tw-svg">
+                                        <svg type="color-fill-alt-2" width="20px" height="20px" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" class="ScSvg-sc-1j5mt50-1 ciYOF">
+                                          <g>
+                                            <path fill-rule="evenodd" d="M9 11v5h2v-5h5V9h-5V4H9v5H4v2h5z" clip-rule="evenodd"></path>
+                                          </g>
+                                        </svg>
+                                      </figure>
+                                    </div>
+                                    <h3 class="CoreText-sc-cpl358-0 gmBqik">Cargar una foto</h3>
+                                  </div>
+                                  <div class="Layout-sc-nxg1ff-0 cBqsCV user-image-uploader__upload-recommendation">
+                                    <h6 class="CoreText-sc-cpl358-0 hfSNcv">Tamaño de imagen recomendado: 1200x480 y menos de 10 MB.</h6>
+                                  </div>
+                                </div>
+                              </div>
+                                <div>
+                                <figure aria-label="Imagen de perfil" class="ScAvatar-sc-12n1gut-0 gNHAJv tw-avatar" dara-a-target="profile-image">
+                                    <img class="InjectLayout-sc-588ddc-0 hYROTF tw-image tw-image-avatar" alt="Imagen de perfil" src="https://static-cdn.jtvnw.net/jtv_user_pictures/93c9e193-e73f-4d6a-910d-323469ed6936-profile_image-300x300.png">
+                            
+                                </figure>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="Layout-sc-nxg1ff-0 bPViAU">
+                            <input type="file" accept=".jpg,.jpeg,.png,.gif" class="profile-image-setting__input">
+                            <div class="Layout-sc-nxg1ff-0 jLsLts">
+                                <button class="ScCoreButton-sc-1qn4ixc-0 ScCoreButtonSecondary-sc-1qn4ixc-2 jGqsfG fSetzA" aria-label="Actualizar imagen de perfil" data-a-target="profile-image-upload-button" data-test-selector="profile-image-setting__upload-button">
+                                    <div class="ScCoreButtonLabel-sc-lh1yxp-0 evtFDZ">
+                                        <div data-a-target="tw-core-button-label-text" class="Layout-sc-nxg1ff-0 eZactg">
+                                            <div class="Layout-sc-nxg1ff-0 kHhUsg">Actualizar imagen de perfil</div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <div class='row justify-content-center'>
+                                
+                                    <h4 class="col-12 card-title text-center mb-4">{{ user.username }} {{user.apellido}}</h4>
+                                    <a class='btn btn-danger btn-rounded col-20' href="{% url 'logout' %}">Cerrar Sesion </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
