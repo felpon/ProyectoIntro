@@ -11,5 +11,5 @@ urlpatterns = [
     path("profile/", views.perfil, name="perfil"),
     path("formulario/", views.formulario, name="formulario"),
     path("info/", views.info, name="info"),
-    path("mensaje/", views.mensaje, name="mensaje"),
+    path("mensaje/", views.mensajepost, name="mensaje"),
 ]

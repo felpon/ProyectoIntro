@@ -5,6 +5,7 @@ from .forms import UserRegisterForm, Formulario
 from django.contrib.auth import authenticate, login
 from .models import *
 from django.shortcuts import render, redirect, get_object_or_404
+import datetime
 
 def feed(request):
 	return render(request, 'Home.html')
@@ -36,7 +37,23 @@ def formulario(request):
 		form = Formulario(request.POST)
 		if form.is_valid():
 			post = form.save(commit=False)
+			puntaje = 0
+			puntaje += post.preg1
+			puntaje += post.preg2
+			puntaje += post.preg3
+			puntaje += post.preg4
+			puntaje += post.preg5
+			puntaje += post.preg6
+			puntaje += post.preg7
+			puntaje += post.preg8
+			puntaje += post.preg9
+			puntaje += post.preg10
+			puntaje += post.preg11
+			puntaje += post.preg12
+			puntaje += post.preg13
+			puntaje += post.preg14
 			post.user = current_user
+			post.puntaje = puntaje
 			post.save()
 			messages.success(request, f'Cuestionario guardado')
 			return redirect('mensaje')
@@ -45,26 +62,16 @@ def formulario(request):
 
 	return render(request, "formulario.html", data)
 
-def mensaje(request):
+def mensajepost(request):
 	if authenticate:
 		current_user = get_object_or_404(User, pk=request.user.pk)
 		perfil = Formu.objects.filter(user=current_user)[:1]
+		print(perfil)
 		pregunta = perfil[0]
-		puntaje = 0
-		puntaje += pregunta.preg1
-		puntaje += pregunta.preg2
-		puntaje += pregunta.preg3
-		puntaje += pregunta.preg4
-		puntaje += pregunta.preg5
-		puntaje += pregunta.preg6
-		puntaje += pregunta.preg7
-		puntaje += pregunta.preg8
-		puntaje += pregunta.preg9
-		puntaje += pregunta.preg10
-		puntaje += pregunta.preg11
-		puntaje += pregunta.preg12
-		puntaje += pregunta.preg13
-		puntaje += pregunta.preg14
+		puntaje = pregunta.puntaje
+		print(puntaje)
+		puntaje = int(puntaje)
+		print(puntaje)
 		return render(request, "mensaje.html", {"puntaje":puntaje})
 	else:
 		return redirect("home")

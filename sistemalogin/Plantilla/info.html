@@ -3,8 +3,13 @@
 
 {% block content %}
     {% if user.is_authenticated %}
+    <p></p>
+                    <p></p>
         {% for form in info %}
-            <li>{{form.user }} /// Fecha: {{form.time }} </li>
+            <div class="container" style="background-color: white;">
+                    <li>{{form.user }} /// Fecha: {{form.time }} </li>
+                
+            </div>
         {% endfor %}
     {% else %}
         Necesitas iniciar sesión.

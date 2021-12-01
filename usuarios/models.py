@@ -1,7 +1,7 @@
 import django
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils import timezone
+import django.utils.timezone
 
 op1 = [
 	[0, "muy mal"],
@@ -89,7 +89,8 @@ class Formu(models.Model):
 	preg12 = models.IntegerField(choices=op10)
 	preg13 = models.IntegerField(choices=op11)
 	preg14 = models.IntegerField(choices=op12)
-	time = models.DateTimeField(default=timezone.now() , null=True,blank=True)
+	time = models.DateTimeField(default=django.utils.timezone.now , null=True,blank=True)
+	puntaje = models.CharField(null=True,blank=True, max_length=4)
 	class Meta:
 		ordering = ['-time']
 
