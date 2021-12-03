@@ -66,18 +66,28 @@ def mensajepost(request):
 	if authenticate:
 		current_user = get_object_or_404(User, pk=request.user.pk)
 		perfil = Formu.objects.filter(user=current_user)[:1]
-		print(perfil)
 		pregunta = perfil[0]
 		puntaje = pregunta.puntaje
-		print(puntaje)
 		puntaje = int(puntaje)
-		print(puntaje)
+		return render(request, "mensaje.html", {"puntaje":puntaje})
+	else:
+		return redirect("home")
+
+def mhistorial(request,id):
+	if authenticate:
+		perfil = Formu.objects.filter(id=id)
+		pregunta = perfil[0]
+		puntaje = pregunta.puntaje
+		puntaje = int(puntaje)
 		return render(request, "mensaje.html", {"puntaje":puntaje})
 	else:
 		return redirect("home")
 
 
 def	info(request):
+	if request.method == "POST":
+		id = request.POST.get("id")
+		return mhistorial(request,id)
 	if authenticate:
 		current_user = get_object_or_404(User, pk=request.user.pk)
 		info = Formu.objects.filter(user=current_user)

@@ -3,12 +3,71 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-        {% if puntaje == 0 %}
-            {{puntaje}}   
-        {% elif puntaje == 1 %}
-            {{puntaje}} 
-        {% else %}
-         {{puntaje}} 
+        {% if puntaje <= 10 %}
+            Has obtenido {{puntaje}} !!<br>
+            Tu salud mental es paupérrima, te recomendamos acudir con un especialista lo antes posible. Abajo en la página tienes números de contactos que podrían ser de utilidad, además te dejaremos algunos consejos generales que puedes poner en práctica, aunque recuerda que siempre lo más recomendable es buscar ayuda de un profesional:<br>
+            Duerma lo suficiente.<br>
+            Coma alimentos saludables.<br>
+            Mantenga un horario diario regular.<br>
+            Salga de la casa todos los días.<br>
+            Haga ejercicio todos los días. Incluso un poco de ejercicio, como un paseo de 15 minutos, puede ayudar.<br>
+            Manténgase alejado del alcohol y las drogas ilícitas.<br>
+            Hable con familiares o amigos cuando se sienta nervioso o asustado.<br>
+            Averigüe sobre los diferentes tipos de actividades grupales a las que puede vincularse.<br>
+            <img src="https://aedv.es/wp-content/uploads/2020/09/depresion-hidradenitis.jpg" alt="depresion" width="500" height="300"><br><br>
+            
+            Si necesitas mas información,te adjuntamos los numeros de ayuda profesional del gobierno de chile.<br><br>
+            SALUD RESPONDE:<br>
+            <a href="tel:6003607777">600 360 7777 (opción 1)</a><br>
+            FONO MAYOR:<br>
+            <a href="tel:800400035">800 4000 35</a><br>
+            FONO ORIENTACION EN VIOLENCIA CONTRA LA MUJER:<br>
+            <a href="tel:1455">1455</a><br>
+            FONO INFANCIA:<br>
+            <a href="tel:800200188">800 200 188</a><br>
+            FONO DROGAS Y ALCOHOL:<br>
+            <a href="tel:1412">1412</a><br>
+            APOYO A VÍCTIMAS DE VIOLENCIA:<br>
+            <a href="6008181000">600 818 1000</a>
+            <br>
+        {% elif puntaje >= 11 and puntaje <= 25 %}
+            Has obtenido{{puntaje}} !!<br>
+            Tu salud mental está empeorando, ten cuidado. En la página principal puedes encontrar algunos consejos para intentar que esta mejore.<br>
+            <img src="https://i0.wp.com/hipertextual.com/wp-content/uploads/2021/10/sydney-sims-fZ2hMpHIrbI-unsplash-scaled.jpg?fit=1200%2C800&ssl=1" alt="depresion" width="500" height="300"><br><br>
+
+            Si necesitas mas información,te adjuntamos los numeros de ayuda profesional del gobierno de chile.<br><br>
+            SALUD RESPONDE:<br>
+            <a href="tel:6003607777">600 360 7777 (opción 1)</a><br>
+            FONO MAYOR:<br>
+            <a href="tel:800400035">800 4000 35</a><br>
+            FONO ORIENTACION EN VIOLENCIA CONTRA LA MUJER:<br>
+            <a href="tel:1455">1455</a><br>
+            FONO INFANCIA:<br>
+            <a href="tel:800200188">800 200 188</a><br>
+            FONO DROGAS Y ALCOHOL:<br>
+            <a href="tel:1412">1412</a><br>
+            APOYO A VÍCTIMAS DE VIOLENCIA:<br>
+            <a href="6008181000">600 818 1000</a>
+            <br>
+        {% elif puntaje >= 36 and puntaje <= 42 %}
+            Has obtenido{{puntaje}} !!<br>
+            Tu salud mental está en perfectas condiciones. ¡Sigue así!.
+            <img src="https://www.enamorando.me/wp-content/uploads/2019/08/mental.jpg" alt="depresion" width="500" height="300"><br><br>
+
+            Si necesitas mas información,te adjuntamos los numeros de ayuda profesional del gobierno de chile.<br><br>
+            SALUD RESPONDE:<br>
+            <a href="tel:6003607777">600 360 7777 (opción 1)</a><br>
+            FONO MAYOR:<br>
+            <a href="tel:800400035">800 4000 35</a><br>
+            FONO ORIENTACION EN VIOLENCIA CONTRA LA MUJER:<br>
+            <a href="tel:1455">1455</a><br>
+            FONO INFANCIA:<br>
+            <a href="tel:800200188">800 200 188</a><br>
+            FONO DROGAS Y ALCOHOL:<br>
+            <a href="tel:1412">1412</a><br>
+            APOYO A VÍCTIMAS DE VIOLENCIA:<br>
+            <a href="6008181000">600 818 1000</a>
+            <br>
         {%endif%}
 
     {% else %}

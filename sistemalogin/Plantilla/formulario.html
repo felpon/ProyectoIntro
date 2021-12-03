@@ -2,77 +2,183 @@
 {% block tittle %} {% endblock %}
 
 {% block content %}
-    {% if user.is_authenticated %}
-    <!--div class="container" style="background-color: white;">
+{% if user.is_authenticated %}
 
+<!-- . para class, # para id-->''
+<style>
+    .d{font-size:20px}
+    .a{border-radius:20px;}
+</style>
+
+<div class="container a" style="background-color: white;">
+    <form action="" class="Formulario" method="post"> 
         {% csrf_token %}
-        <p></p>1.- Psicológicamente ¿Cómo te has sentido esta semana? 
-        {{ form.preg1 }}
-        <p></p>2.- ¿ Te sientes capaz de lograr tus objetivos de esta semana?
-        {{ form.preg2 }}
-        <p></p>3.- ¿Cómo calificarías tu desempeño académico de esta semana? 
-        {{ form.preg3 }}
-        <p></p>4.- ¿Te afecta de manera emocional tu rendimiento académico? 
-        {{ form.preg4 }}
-        <p></p>5.- ¿Te sientes presionado por lo que haces? 
-        {{ form.preg5 }}  
-        <p></p>6.- ¿Has sentido poco interés al realizar ciertas actividades? 
-        {{ form.preg6 }}
-        <p></p>7.- ¿Tienes problemas al momento de concentrarte, ya sea en momentos de ocio o de trabajo? 
-        {{ form.preg7 }}
-        <p></p>8.- ¿Sueles sentir que estás a punto de llorar? 
-        {{ form.preg8 }}
-        <p></p>9.- ¿Qué tanto te cuesta relajarte o tomarte un descanso? 
-        {{ form.preg9 }}  
-        <p></p>10.-¿Te has sentido distraído?
-        {{ form.preg10 }}
-        <p></p>11.-Si la respuesta anterior fue “si” o “mas o menos”¿Afecta en tus quehacer de esta semana?
-        {{ form.preg11 }}
-        <p></p>12.-¿Sientes que tu comportamiento ha mejorado o empeorado esta semana?
-        {{ form.preg12 }}
-        <p></p>13.-¿Has visto alterados tus tiempos de sueño, ya sea en mayor o menor medida? 
-        {{ form.preg13 }}
-        <p></p>14.- ¿Has tenido un buen manejo del tiempo esta semana?
-        {{ form.preg14 }}
-        <button type="submit" id="btnEnviar" class="button">Enviar</button-->
-    <div class="container" style="background-color: white;">
-        <form action="" class="Formulario" method="post"> 
-            {% csrf_token %}
-            <ol>
-                <li>Psicológicamente ¿Cómo te has sentido esta semana?</li>
-                {{ form.preg1 }}
-                <li>¿ Te sientes capaz de lograr tus objetivos de esta semana?</li>
-                {{ form.preg2 }}
-                <li>¿Cómo calificarías tu desempeño académico de esta semana?</li>
-                {{ form.preg3 }}
-                <li>¿Te afecta de manera emocional tu rendimiento académico?</li>
-                {{ form.preg4 }}
-                <li>¿Te sientes presionado por lo que haces?</li>
-                {{ form.preg5 }}  
-                <li>¿Has sentido poco interés al realizar ciertas actividades?</li> 
-                {{ form.preg6 }}
-                <li>¿Tienes problemas al momento de concentrarte, ya sea en momentos de ocio o de trabajo?</li> 
-                {{ form.preg7 }}
-                <li>¿Sueles sentir que estás a punto de llorar?</li> 
-                {{ form.preg8 }}
-                <li>¿Qué tanto te cuesta relajarte o tomarte un descanso?</li> 
-                {{ form.preg9 }}  
-                <li>¿Te has sentido distraído?</li>
-                {{ form.preg10 }}
-                <li>Si la respuesta anterior fue “si” o “mas o menos”¿Afecta en tus quehacer de esta semana?</li>
-                {{ form.preg11 }}
-                <li>¿Sientes que tu comportamiento ha mejorado o empeorado esta semana?</li>
-                {{ form.preg12 }}
-                <li>¿Has visto alterados tus tiempos de sueño, ya sea en mayor o menor medida?</li> 
-                {{ form.preg13 }}
-                <li>¿Has tenido un buen manejo del tiempo esta semana?</li>
-                {{ form.preg14 }}
-            </ol>
+        <ol>
+            <br>
+            <li class="d">Psicológicamente ¿Cómo te has sentido esta semana?</li>
+            <select class="form-select" aria-label="Default select example" name="preg1" required="" id="id_preg1">
+                <option selected>Seleccione una respuesta</option>
+                <option value="0">muy mal</option>
+                <option value="1">mal</option>
+                <option value="2">normal</option>
+                <option value="3">bien</option>
+                <option value="4">muy bien</option> 
+            </select>
+
+            <br>
+
+            <li class="d">¿ Te sientes capaz de lograr tus objetivos de esta semana?</li>
+            <select class="form-select" aria-label="Default select example" name="preg2" required="" id="id_preg2">
+                <option selected>Seleccione una respuesta</option>
+                <option value="0">capaz</option>
+                <option value="1">quizas</option>
+                <option value="2">incapaz</option>
+            </select>
+
+            <br>
+
+            <li class="d">¿Cómo calificarías tu desempeño académico de esta semana?</li>
+            <select class="form-select" aria-label="Default select example" name="preg3" required="" id="id_preg3">
+                <option selected>Seleccione una respuesta</option>
+                <option value="0">muy mal</option>
+                <option value="1">mal</option>
+                <option value="2">normal</option>
+                <option value="3">bien</option>
+                <option value="4">muy bien</option>
+            </select>
+
+            <br>
             
-            <button type="sumbit" id="btnEnviar" class="btn btn-primary active" data-bs-toggle="button" autocomplete="off" aria-pressed="true">Enviar</button>
-        </form>
-    </div>
-    {% else %}
-        Necesitas iniciar sesión.
-    {% endif %}
+            <li class="d">¿Te afecta de manera emocional tu rendimiento académico?</li>
+            <select class="form-select" aria-label="Default select example" name="preg4" required="" id="id_preg4">
+                <option selected>Seleccione una respuesta</option>
+                <option value="0">mucho</option>
+                <option value="1">me  preocupa</option>
+                <option value="2">poco </option>
+                <option value="3">no me afecta</option>
+            </select>
+
+            <br>
+
+            <li class="d">¿Te sientes presionado por lo que haces?</li>
+            <select class="form-select" aria-label="Default select example" name="preg5" required="" id="id_preg5">
+                <option selected>Seleccione una respuesta</option>
+                <option value="0">Muy presionado</option>
+                <option value="1">poco presionado</option>
+                <option value="2">Ninguna presión</option>
+            </select>
+
+            <br>
+
+            <li class="d">¿Has sentido poco interés al realizar ciertas actividades?</li> 
+            <select class="form-select" aria-label="Default select example" name="preg6" required="" id="id_preg6">
+                <option selected>Seleccione una respuesta</option>
+                <option value="0">Si</option>
+                <option value="1">No</option>
+            </select>
+
+            <br>
+
+            <li class="d">¿Tienes problemas al momento de concentrarte, ya sea en momentos de ocio o de trabajo?</li> 
+            <select class="form-select" aria-label="Default select example" name="preg7" required="" id="id_preg7">
+                <option selected>Seleccione una respuesta</option>
+                <option value="0">siempre</option>
+                <option value="1">casi siempre</option>
+                <option value="2">a veces</option>
+                <option value="3">casi nunca</option>
+                <option value="4">nunca</option>
+            </select>
+
+            <br>
+
+            <li class="d">¿Sueles sentir que estás a punto de llorar?</li> 
+            <select class="form-select" aria-label="Default select example" name="preg8" required="" id="id_preg8">
+                <option selected>Seleccione una respuesta</option>
+                <option value="0">siempre</option>
+                <option value="1">casi siempre</option>
+                <option value="2">a veces</option>
+                <option value="3">casi nunca</option>
+                <option value="4">nunca</option>
+            </select>
+
+            <br>
+
+            <li class="d">¿Qué tanto te cuesta relajarte o tomarte un descanso?</li> 
+            <select class="form-select" aria-label="Default select example" name="preg9" required="" id="id_preg9">
+                <option selected>Seleccione una respuesta</option>
+                <option value="0">Me cuesta mucho</option>
+                <option value="1">Me cuesta poco</option>
+                <option value="2">Me relajo fácilmente</option>
+            </select>
+
+            <br>
+
+            <li class="d">¿Te has sentido distraído?</li>
+            <select class="form-select" aria-label="Default select example" name="preg10" required="" id="id_preg10">
+                <option selected>Seleccione una respuesta</option>
+                <option value="0">mucho</option>
+                <option value="1">más o menos</option>
+                <option value="2">poco</option>
+                <option value="3">nada</option>
+            </select>
+
+            <br>
+        
+            <li class="d">Si la respuesta anterior fue “si” o “mas o menos”¿Afecta en tus quehacer de esta semana?</li>
+            <select class="form-select" aria-label="Default select example" name="preg11" required="" id="id_preg11">
+                <option selected>Seleccione una respuesta</option>
+                <option value="0">mucho</option>
+                <option value="1">más o menos</option>
+                <option value="2">poco</option>
+                <option value="3">nada</option>
+                <option value="4">saltar</option>
+            </select>
+
+            <br>
+
+            <li class="d">¿Sientes que tu comportamiento ha mejorado o empeorado esta semana?</li>
+            <select class="form-select" aria-label="Default select example" name="preg12" required="" id="id_preg12">
+                <option selected>Seleccione una respuesta</option>
+                <option value="0">Ha sido peor</option>
+                <option value="1">Un poco mejor</option>
+                <option value="2">igual que la semana anterior</option>
+                <option value="3">Ha mejorado mucho </option>
+            </select>
+
+            <br>
+            
+            <li class="d">¿Has visto alterados tus tiempos de sueño, ya sea en mayor o menor medida?</li> 
+            <select class="form-select" aria-label="Default select example" name="preg13" required="" id="id_preg13">
+                <option selected>Seleccione una respuesta</option>
+                <option value="0">Casi no puedo dormir</option>
+                <option value="1">Duermo un poco menos</option>
+                <option value="2">duermo lo mismo que siempre</option>
+                <option value="3">estoy durmiendo un poco más</option>
+                <option value="4">Duermo mucho más que antes</option>
+            </select>
+
+            <br>
+
+            <li class="d">¿Has tenido un buen manejo del tiempo esta semana?</li>
+            <select class="form-select" aria-label="Default select example" name="preg14" required="" id="id_preg14">
+                <option selected>Seleccione una respuesta</option>
+                <option value="0">Siento que tengo muy poco tiempo</option>
+                <option value="1">Siento que estoy bien con el tiempo </option>
+                <option value="2">Me siento con mucho tiempo libre</option>
+            </select>
+
+            <br>
+
+        </ol>
+
+        <button type="sumbit" id="btnEnviar" class="btn btn-primary active" data-bs-toggle="button" autocomplete="off" aria-pressed="true">Enviar</button>
+
+    </form>
+    <br>
+</div>
+<br>
+
+{% else %}
+    Necesitas iniciar sesión.
+{% endif %}
 {% endblock %}
