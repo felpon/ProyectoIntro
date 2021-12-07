@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+{% block tittle %} {% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<!-- . para class, # para id-->
+<style>
+    .d{font-size:20px}
+    .a{border-radius:20px;}
+</style>
+<p></p>
+<div class="container a" style="background-color: white;">
+    <class="d">Cuestionario dia {{perfil.time}}</class>
+        <ol>
+            <br>
+            <li class="d">Psicológicamente ¿Cómo te has sentido esta semana? {{perfil.preg1 }}</li>
+                {%if perfil.preg1 == 0 %}
+                    Respuesta: Muy mal
+                {%elif perfil.preg1 == 1 %}
+                    Respuesta: Mal
+                {%elif perfil.preg1 == 2 %}
+                    Respuesta: Normal
+                {%elif perfil.preg1 == 3 %}
+                    Respuesta: Bien
+                {%elif perfil.preg1 == 4 %}
+                    Respuesta: Muy bien
+                {% endif %}
+            <br>    
+
+            <li class="d">¿Te sientes capaz de lograr tus objetivos de esta semana? {{perfil.preg2 }}</li>
+            {%if perfil.preg2 == 0 %}
+                Respuesta: Incapaz
+            {%elif perfil.preg2 == 1 %}
+                Respuesta: Quizás
+            {%elif perfil.preg2 == 2 %}
+                Respuesta: Capaz
+            {% endif %}
+
+            <br>
+
+            <li class="d">¿Cómo calificarías tu desempeño académico de esta semana? {{perfil.preg3 }} </li>
+            {%if perfil.preg3 == 0 %}
+                Respuesta: Muy mal
+            {%elif perfil.preg3 == 1 %}
+                Respuesta: Mal
+            {%elif perfil.preg3 == 2 %}
+                Respuesta: Normal
+            {%elif perfil.preg3 == 3 %}
+                Respuesta: Bien
+            {%elif perfil.preg3 == 4 %}
+                Respuesta: Muy bien
+            {% endif %}
+            <br>
+            
+            <li class="d">¿Te afecta de manera emocional tu rendimiento académico? {{perfil.preg4 }} </li>
+            {%if perfil.preg4 == 0 %}
+                Respuesta: Mucho
+            {%elif perfil.preg4 == 1 %}
+                Respuesta: Me preocupa
+            {%elif perfil.preg4 == 2 %}
+                Respuesta: Poco
+            {%elif perfil.preg4 == 3 %}
+                Respuesta: No me afecta
+
+            {% endif %}
+
+            <br>
+
+            <li class="d">¿Te sientes presionado por lo que haces?  {{perfil.preg5}}</li> 
+
+            {%if perfil.preg5 == 0 %}
+                Respuesta: Muy presionado
+            {%elif perfil.preg5 == 1 %}
+                Respuesta: Poco presionado
+            {%elif perfil.preg5 == 2 %}
+                Respuesta: Ninguna presión
+
+            {% endif %}
+            <br>
+
+            <li class="d">¿Has sentido poco interés al realizar ciertas actividades? {{perfil.preg6}}</li> 
+            {%if perfil.preg6 == 0 %}
+                Respuesta: Si
+            {%elif perfil.preg6 == 1 %}
+                Respuesta: No
+            {% endif %}
+            <br>
+
+            <li class="d">¿Tienes problemas al momento de concentrarte, ya sea en momentos de ocio o de trabajo? {{perfil.preg7}}</li> 
+          
+            {%if perfil.preg7 == 0 %}
+                Respuesta: Siempre
+            {%elif perfil.preg7 == 1 %}
+                Respuesta: Casi siempre
+            {%elif perfil.preg7 == 2 %}
+                Respuesta: A veces
+            {%elif perfil.preg7 == 3 %}
+                Respuesta: Casi nunca
+            {%elif perfil.preg7 == 4 %}
+                Respuesta: Nunca
+            {% endif %}
+            <br>
+
+            <li class="d">¿Sueles sentir que estás a punto de llorar? {{perfil.preg8}}</li> 
+         
+            {%if perfil.preg8 == 0 %}
+                Respuesta: Siempre
+            {%elif perfil.preg8 == 1 %}
+                Respuesta: Casi siempre
+            {%elif perfil.preg8 == 2 %}
+                Respuesta: A veces
+            {%elif perfil.preg8 == 3 %}
+                Respuesta: Casi nunca
+            {%elif perfil.preg8 == 4 %}
+                Respuesta: Nunca
+            {% endif %}
+
+            <br>
+
+            <li class="d">¿Qué tanto te cuesta relajarte o tomarte un descanso? {{perfil.preg9}}</li> 
+        
+            {%if perfil.preg9 == 0 %}
+                Respuesta: Me cuesta mucho
+            {%elif perfil.preg9 == 1 %}
+                Respuesta: Me cuesta poco
+            {%elif perfil.preg9 == 2 %}
+                Respuesta: Me relajo fácilmente
+            {% endif %}
+            <br>
+
+            <li class="d">¿Te has sentido angustiado? {{perfil.preg10}}</li>
+            
+            {%if perfil.preg10 == 0 %}
+                Respuesta: Mucho
+            {%elif perfil.preg10 == 1 %}
+                Respuesta: Más o menos
+            {%elif perfil.preg10 == 2 %}
+                Respuesta: Poco
+            {%elif perfil.preg10 == 3 %}
+                Respuesta: Nada
+            {% endif %}
+            <br>
+        
+            <li class="d">Si la respuesta anterior fue “si” o “más o menos”¿Afecta en tus quehacer de esta semana?, en caso contrario marcar casilla "Saltar" {{perfil.preg11}}</li>
+            
+            {%if perfil.preg11 == 0 %}
+                Respuesta: Mucho
+            {%elif perfil.preg11 == 1 %}
+                Respuesta: Más o menos
+            {%elif perfil.preg11 == 2 %}
+                Respuesta: Poco
+            {%elif perfil.preg11 == 3 %}
+                Respuesta: Nada
+            {%elif perfil.preg11 == 4 %}
+                Respuesta: Saltar
+            {% endif %}
+
+            <br>
+
+            <li class="d">¿Sientes que tu comportamiento ha mejorado o empeorado esta semana? {{perfil.preg12}}</li>
+            
+            {%if perfil.preg12 == 0 %}
+            Respuesta: Ha sido peor
+            {%elif perfil.preg12 == 1 %}
+                Respuesta: Igual que la semana anterior
+            {%elif perfil.preg12 == 2 %}
+                Respuesta: Un poco mejor
+            {%elif perfil.preg12 == 3 %}
+                Respuesta: Ha mejorado mucho
+            {% endif %}
+
+            <br>
+            
+            <li class="d">¿Has visto alterados tus tiempos de sueño, ya sea en mayor o menor medida? {{perfil.preg13}}</li> 
+            
+            {%if perfil.preg13 == 0 %}
+                Respuesta: Casi no puedo dormir
+            {%elif perfil.preg13 == 1 %}
+                Respuesta: Duermo un poco menos
+            {%elif perfil.preg13 == 2 %}
+                Respuesta: Duermo lo mismo que siempre
+            {%elif perfil.preg13 == 3 %}
+                Respuesta: Estoy durmiendo un poco más
+            {%elif perfil.preg13 == 4 %}
+                Respuesta: Duermo mucho más que antes
+            {% endif %}
+
+            <br>
+
+            <li class="d">¿Has tenido un buen manejo del tiempo esta semana? {{perfil.preg14}}</li>
+          
+            {%if perfil.preg14 == 0 %}
+                Respuesta: Siento que tengo muy poco tiempo
+            {%elif perfil.preg14 == 1 %}
+                Respuesta: Siento que estoy bien con el tiempo
+            {%elif perfil.preg14 == 2 %}
+                Respuesta: Me siento con mucho tiempo libre
+            {% endif %}
+            <br>
+
+        </ol>
+
+    </form>
+    <br>
+</div>
+<br>
+
+{% else %}
+<div class="alert alert-primary" role="alert">
+    Necesitas iniciar sesión.
+</div>
+
+{% endif %}
+{% endblock %}

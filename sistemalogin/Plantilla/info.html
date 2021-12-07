@@ -10,7 +10,7 @@
                 <form action="" method="post">
                     {% csrf_token %}
                     
-                    <li>{{form.user }} /// Fecha: {{form.time }} /// {{form.id }} <input type="submit" name="id" value={{form.id}}>
+                    <li>Fecha: {{form.time }} /// Puntaje: {{ form.puntaje }} <button type="submit" name="puntaje" value={{form.id}}>Ver mensaje </button> <button type="submit" name="Formulario" value={{form.id}}>Ver Formulario </button>
                 </form>
             </div>
         {% endfor %}

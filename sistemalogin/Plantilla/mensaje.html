@@ -49,6 +49,27 @@
             APOYO A VÍCTIMAS DE VIOLENCIA:<br>
             <a href="6008181000">600 818 1000</a>
             <br>
+
+        {% elif puntaje >= 26 and puntaje <= 35 %}
+            Has obtenido{{puntaje}} !!<br>
+            Tu salud mental se mantiene estable por el momento, pero no olvides seguir con buenos hábitos para continuar de esta forma.<br>
+            <img src="https://praxis.com.do/wp-content/uploads/2019/08/23_Vida-Estilos_04_1p01-2.jpg" alt="depresion" width="500" height="300"><br><br>
+
+            Si necesitas mas información,te adjuntamos los numeros de ayuda profesional del gobierno de chile.<br><br>
+            SALUD RESPONDE:<br>
+            <a href="tel:6003607777">600 360 7777 (opción 1)</a><br>
+            FONO MAYOR:<br>
+            <a href="tel:800400035">800 4000 35</a><br>
+            FONO ORIENTACION EN VIOLENCIA CONTRA LA MUJER:<br>
+            <a href="tel:1455">1455</a><br>
+            FONO INFANCIA:<br>
+            <a href="tel:800200188">800 200 188</a><br>
+            FONO DROGAS Y ALCOHOL:<br>
+            <a href="tel:1412">1412</a><br>
+            APOYO A VÍCTIMAS DE VIOLENCIA:<br>
+            <a href="6008181000">600 818 1000</a>
+            <br>
+        
         {% elif puntaje >= 36 and puntaje <= 42 %}
             Has obtenido{{puntaje}} !!<br>
             Tu salud mental está en perfectas condiciones. ¡Sigue así!.
@@ -71,6 +92,8 @@
         {%endif%}
 
     {% else %}
-        Necesitas iniciar sesión.
+        <div class="alert alert-primary" role="alert">
+            Necesitas iniciar sesión.
+        </div>
     {% endif %}
 {% endblock %}
