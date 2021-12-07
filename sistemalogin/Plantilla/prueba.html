@@ -66,150 +66,6 @@
 {% endblock %}
 
 
-<!--version dos-->
-{% extends "base.html" %}
-
-{% block content %}
-<div class='container d-flex justify-content-center mt-5 col-md-10 col-xl-8'>
-    <div class="card shadow-4-strong mb-3">
-        <div class="row g-0">
-            <div class='Layout-sc-nxg1ff-0 eyjcIM'>
-                <div class="Layout-sc-nxg1ff-0 UMCkw settings-row">
-                    <div class="Layout-sc-nxg1ff-0 profile-image-setting">
-                        <div class="Layout-sc-nxg1ff-0 irkKdr">
-                            <div class="Layout-sc-nxg1ff-0 SpXOZ">
-                                <div>
-                                <figure aria-label="Imagen de perfil" class="ScAvatar-sc-12n1gut-0 gNHAJv tw-avatar" dara-a-target="profile-image">
-                                    <img class="InjectLayout-sc-588ddc-0 hYROTF tw-image tw-image-avatar" alt="Imagen de perfil" src="https://static-cdn.jtvnw.net/jtv_user_pictures/93c9e193-e73f-4d6a-910d-323469ed6936-profile_image-300x300.png">
-                            
-                                </figure>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="Layout-sc-nxg1ff-0 bPViAU">
-                            <input type="file" accept=".jpg,.jpeg,.png,.gif" class="profile-image-setting__input">
-                            <div class="Layout-sc-nxg1ff-0 jLsLts">
-                                <button class="ScCoreButton-sc-1qn4ixc-0 ScCoreButtonSecondary-sc-1qn4ixc-2 jGqsfG fSetzA" aria-label="Actualizar imagen de perfil" data-a-target="profile-image-upload-button" data-test-selector="profile-image-setting__upload-button">
-                                    <div class="ScCoreButtonLabel-sc-lh1yxp-0 evtFDZ">
-                                        <div data-a-target="tw-core-button-label-text" class="Layout-sc-nxg1ff-0 eZactg">
-                                            <div class="Layout-sc-nxg1ff-0 kHhUsg">Actualizar imagen de perfil</div>
-                                        </div>
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="card-body">
-                                <div class='row justify-content-center'>
-                                
-                                    <h4 class="col-12 card-title text-center mb-4">{{ user.username }} {{user.apellido}}</h4>
-                                    <a class='btn btn-danger btn-rounded col-20' href="{% url 'logout' %}">Cerrar Sesion </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{% endblock %}
-
-<!--random-->
-<div class="tw-drop-zone__content">
-  <input data-a-target="file-picker-input" data-test-selector="file-picker-input" class="InjectLayout-sc-588ddc-0 bFIBHP drag-and-drop-file-picker__input" accept="image/*" type="file">
-  <div class="Layout-sc-nxg1ff-0">
-    <div class="Layout-sc-nxg1ff-0 user-image-uploader__upload-info">
-      <div class="Layout-sc-nxg1ff-0">
-        <figure class="ScFigure-sc-1j5mt50-0 eHOmkT tw-svg">
-          <svg type="color-fill-alt-2" width="20px" height="20px" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" class="ScSvg-sc-1j5mt50-1 ciYOF">
-            <g>
-              <path fill-rule="evenodd" d="M9 11v5h2v-5h5V9h-5V4H9v5H4v2h5z" clip-rule="evenodd"></path>
-            </g>
-          </svg>
-        </figure>
-      </div>
-      <h3 class="CoreText-sc-cpl358-0 gmBqik">Cargar una foto</h3>
-    </div>
-    <div class="Layout-sc-nxg1ff-0 cBqsCV user-image-uploader__upload-recommendation">
-      <h6 class="CoreText-sc-cpl358-0 hfSNcv">Tamaño de imagen recomendado: 1200x480 y menos de 10 MB.</h6>
-    </div>
-  </div>
-</div>
-
-
-<!--version tres-->
-{% extends "base.html" %}
-
-{% block content %}
-<div class='container d-flex justify-content-center mt-5 col-md-10 col-xl-8'>
-    <div class="card shadow-4-strong mb-3">
-        <div class="row g-0">
-            <div class='Layout-sc-nxg1ff-0 eyjcIM'>
-                <div class="Layout-sc-nxg1ff-0 UMCkw settings-row">
-                    <div class="Layout-sc-nxg1ff-0 profile-image-setting">
-                        <div class="Layout-sc-nxg1ff-0 irkKdr">
-                            <div class="Layout-sc-nxg1ff-0 SpXOZ"> 
-                              <div class="tw-drop-zone__content">
-                                <input data-a-target="file-picker-input" data-test-selector="file-picker-input" class="InjectLayout-sc-588ddc-0 bFIBHP drag-and-drop-file-picker__input" accept="image/*" type="file">
-                                <div class="Layout-sc-nxg1ff-0">
-                                  <div class="Layout-sc-nxg1ff-0 user-image-uploader__upload-info">
-                                    <div class="Layout-sc-nxg1ff-0">
-                                      <figure class="ScFigure-sc-1j5mt50-0 eHOmkT tw-svg">
-                                        <svg type="color-fill-alt-2" width="20px" height="20px" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" class="ScSvg-sc-1j5mt50-1 ciYOF">
-                                          <g>
-                                            <path fill-rule="evenodd" d="M9 11v5h2v-5h5V9h-5V4H9v5H4v2h5z" clip-rule="evenodd"></path>
-                                          </g>
-                                        </svg>
-                                      </figure>
-                                    </div>
-                                    <h3 class="CoreText-sc-cpl358-0 gmBqik">Cargar una foto</h3>
-                                  </div>
-                                  <div class="Layout-sc-nxg1ff-0 cBqsCV user-image-uploader__upload-recommendation">
-                                    <h6 class="CoreText-sc-cpl358-0 hfSNcv">Tamaño de imagen recomendado: 1200x480 y menos de 10 MB.</h6>
-                                  </div>
-                                </div>
-                              </div>
-                                <div>
-                                <figure aria-label="Imagen de perfil" class="ScAvatar-sc-12n1gut-0 gNHAJv tw-avatar" dara-a-target="profile-image">
-                                    <img class="InjectLayout-sc-588ddc-0 hYROTF tw-image tw-image-avatar" alt="Imagen de perfil" src="https://static-cdn.jtvnw.net/jtv_user_pictures/93c9e193-e73f-4d6a-910d-323469ed6936-profile_image-300x300.png">
-                            
-                                </figure>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="Layout-sc-nxg1ff-0 bPViAU">
-                            <input type="file" accept=".jpg,.jpeg,.png,.gif" class="profile-image-setting__input">
-                            <div class="Layout-sc-nxg1ff-0 jLsLts">
-                                <button class="ScCoreButton-sc-1qn4ixc-0 ScCoreButtonSecondary-sc-1qn4ixc-2 jGqsfG fSetzA" aria-label="Actualizar imagen de perfil" data-a-target="profile-image-upload-button" data-test-selector="profile-image-setting__upload-button">
-                                    <div class="ScCoreButtonLabel-sc-lh1yxp-0 evtFDZ">
-                                        <div data-a-target="tw-core-button-label-text" class="Layout-sc-nxg1ff-0 eZactg">
-                                            <div class="Layout-sc-nxg1ff-0 kHhUsg">Actualizar imagen de perfil</div>
-                                        </div>
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="card-body">
-                                <div class='row justify-content-center'>
-                                
-                                    <h4 class="col-12 card-title text-center mb-4">{{ user.username }} {{user.apellido}}</h4>
-                                    <a class='btn btn-danger btn-rounded col-20' href="{% url 'logout' %}">Cerrar Sesion </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{% endblock %}
-
-
 <!--dropdown 1-->
 
 <div class="dropdown">
@@ -254,34 +110,70 @@
 
 
 
-<!--pagina de puntaje bajo-->
-<style>
-  .d{font-size:20px}
-  .a{border-radius:20px;}
-</style>
 
-<div class="container a" style="background-color: white;">
-  Has obtenido {{puntaje}} puntos!!. TEN CUIDADO!! Has obtenido un puntaje muy bajo.Te informaremos de algunos datos que debes saber,para tomar acciones lo mas pronto posible. <br><br>
-  La depresión se define como una disminución  (más o menos marcada) del tono del humor y de algunas funciones cognitivas, sentimientos de tristeza, inhibición e ideas de culpabilidad<br><br>
-  <img src="https://fundacion.amv.es/wp-content/uploads/2019/11/depresion_1200-1024x683.jpeg" alt="depresion" width="500" height="300"><br><br>
-  En cambio la ansiedad es la preocupación y miedos intensos, excesivos y continuos ante situaciones cotidianas. Es posible que se produzca taquicardia, respiración agitada, sudoración y sensación de cansancio.<br><br>
-  <img src="https://static2.abc.es/media/bienestar/2021/07/12/test-ansiedad-kXt--620x349@abc.jpg" alt="ansiedad" width="500" height="300"><br><br><br>
-  Si necesitas mas información,te adjuntamos los numeros de ayuda profesional del gobierno de chile.<br><br>
-  SALUD RESPONDE:<br>
-  <a href="tel:6003607777">600 360 7777 (opción 1)</a><br>
-  FONO MAYOR:<br>
-  <a href="tel:800400035">800 4000 35</a><br>
-  FONO ORIENTACION EN VIOLENCIA CONTRA LA MUJER:<br>
-  <a href="tel:1455">1455</a><br>
-  FONO INFANCIA:<br>
-  <a href="tel:800200188">800 200 188</a><br>
-  FONO DROGAS Y ALCOHOL:<br>
-  <a href="tel:1412">1412</a><br>
-  APOYO A VÍCTIMAS DE VIOLENCIA:<br>
-  <a href="6008181000">600 818 1000</a>
-  <br>
+{% extends "base.html" %}
+
+{% block content %}
+
+
+      <div class="col-md-7">
+        <div class="card-body">
+          <div class='row justify-content-center'>
+            
+            <h4 class="col-12 card-title text-center mb-4">{{ user.username }} {{user.apellido}}</h4>
+            <a class="navbar-brand" href="/info/">
+              <button type="button" class="btn btn-primary" data-mdb-toggle='modal' data-mdb-target='#loginModal'>
+                  <small>Historial de Formularios</small>
+              </button>
+            </a>
+            <a class='btn btn-danger btn-rounded col-5' href="{% url 'logout' %}">
+              <small>Cerrar Sesion</small>  
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
+{% endblock %}
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Perfil</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <main class="card">
+    <header>
+      <img src="./img/foto.jpg" alt="">
+    </header>
+
+    <section>
+      <h2>Roger Natividad</h2>
+      <h3>Software Engineer - Web Developer</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, corporis.</p>
+      <ul>
+        <li><a href="#" class="fa fa-facebook"></a></li>
+        <li><a href="#" class="fa fa-twitter"></a></li>
+        <li><a href="#" class="fa fa-linkedin"></a></li>
+        <li><a href="#" class="fa fa-youtube"></a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Coded By RogerNatividad</p>
+    </footer>
+  </main>
+</body>
 
 
 
@@ -290,30 +182,16 @@
 
 
 
+<div class="container">
+        
+  <h4 class="container" style="background-color:white;">{{ user.username }} {{user.apellido}}</h4>
+  <a class="navbar-brand" href="/info/">
+    <button type="button" class="btn btn-primary" data-mdb-toggle='modal' data-mdb-target='#loginModal'>
+        <small>Historial de Formularios</small>
+    </button>
+  </a>
+  <a class='btn btn-danger btn-rounded col-5' href="{% url 'logout' %}">
+    <small>Cerrar Sesion</small>  
+  </a>
 
-
-
-
-
-
-
-
-
-ola Si}
-{% if puntaje == 0 %}
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA TIENES {{puntaje}}   
-        {% elif puntaje <= 10 %}
-            
-        <style>
-            .d{font-size:20px}
-            .a{border-radius:20px;}
-        </style>
-        <br> 
-        <div class="container a" style="background-color: white;">
-            <br>
-            Has obtenido {{puntaje}} puntos, ¡Ten cuidado! El puntaje obtenido es muy bajo, por lo tanto, te daremos algunos datos que te puedan informar y ayudar a buscar asistencia profesional lo antes posible.<br><br>
-            La depresión es un trastorno del estado de ánimo el cual se caracteriza por fuertes sentimientos de tristeza, pérdida, ira o frustración, los cuales interfieren en la vida diaria durante un período de tiempo. Algunas de sus grandes características son la inhibición física, falta de energía, perdida de interés sobre actividades relevantes para la vida diaria, alteraciones del sueño, perdida o aumento de peso y en algunos casos pensamientos suicidas.<br><br>
-            <img src="https://fundacion.amv.es/wp-content/uploads/2019/11/depresion_1200-1024x683.jpeg" alt="depresion" width="500" height="300"><br><br>
-            Otro trastorno que va de la mano con la depresión es la ansiedad, la cual se caracteriza por una angustia y preocupación excesiva a todo lo que ocurre en el entorno, presencia de un miedo constante y catastrófico. Tiene una duración de mínimo 6 meses y presenta síntomas como dolor de cabeza, temblores, mareos, sudoración y cambios en la frecuencia cardíaca.<br><br>
-            <img src="https://static2.abc.es/media/bienestar/2021/07/12/test-ansiedad-kXt--620x349@abc.jpg" alt="ansiedad" width="500" height="300"><br><br>
-            Es importante no auto diagnosticarse, por esto mismo, si necesitas más información te adjuntamos números de asistencia profesional otorgado por el Gobierno de Chile.<br><br>
+</div>

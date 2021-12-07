@@ -3,7 +3,16 @@
 
 {% block content %}
     {% if user.is_authenticated %}
+
+        <!-- <=10 puntos -->
         {% if puntaje <= 10 %}
+        <style>
+            .d{font-size:20px}
+            .a{border-radius:20px;}
+        </style>
+        <br>
+        <div class="container a" style="background-color: white;">
+            <br>
             Has obtenido {{puntaje}} !!<br>
             Tu salud mental es paupérrima, te recomendamos acudir con un especialista lo antes posible. Abajo en la página tienes números de contactos que podrían ser de utilidad, además te dejaremos algunos consejos generales que puedes poner en práctica, aunque recuerda que siempre lo más recomendable es buscar ayuda de un profesional:<br>
             Duerma lo suficiente.<br>
@@ -11,7 +20,7 @@
             Mantenga un horario diario regular.<br>
             Salga de la casa todos los días.<br>
             Haga ejercicio todos los días. Incluso un poco de ejercicio, como un paseo de 15 minutos, puede ayudar.<br>
-            Manténgase alejado del alcohol y las drogas ilícitas.<br>
+            Manténgase alejado del alcohol y las drogas.<br>
             Hable con familiares o amigos cuando se sienta nervioso o asustado.<br>
             Averigüe sobre los diferentes tipos de actividades grupales a las que puede vincularse.<br>
             <img src="https://aedv.es/wp-content/uploads/2020/09/depresion-hidradenitis.jpg" alt="depresion" width="500" height="300"><br><br>
@@ -29,8 +38,17 @@
             <a href="tel:1412">1412</a><br>
             APOYO A VÍCTIMAS DE VIOLENCIA:<br>
             <a href="6008181000">600 818 1000</a>
-            <br>
+            <br><br>
+
+        <!-- 11<= puntos <=25 -->
         {% elif puntaje >= 11 and puntaje <= 25 %}
+        <style>
+            .d{font-size:20px}
+            .a{border-radius:20px;}
+        </style>
+        <br>
+        <div class="container a" style="background-color: white;">
+            <br>
             Has obtenido{{puntaje}} !!<br>
             Tu salud mental está empeorando, ten cuidado. En la página principal puedes encontrar algunos consejos para intentar que esta mejore.<br>
             <img src="https://i0.wp.com/hipertextual.com/wp-content/uploads/2021/10/sydney-sims-fZ2hMpHIrbI-unsplash-scaled.jpg?fit=1200%2C800&ssl=1" alt="depresion" width="500" height="300"><br><br>
@@ -49,8 +67,17 @@
             APOYO A VÍCTIMAS DE VIOLENCIA:<br>
             <a href="6008181000">600 818 1000</a>
             <br>
+            <br>
 
+        <!-- 26<= puntos <=35 -->
         {% elif puntaje >= 26 and puntaje <= 35 %}
+        <style>
+            .d{font-size:20px}
+            .a{border-radius:20px;}
+        </style>
+        <br>
+        <div class="container a" style="background-color: white;">
+            <br>
             Has obtenido{{puntaje}} !!<br>
             Tu salud mental se mantiene estable por el momento, pero no olvides seguir con buenos hábitos para continuar de esta forma.<br>
             <img src="https://praxis.com.do/wp-content/uploads/2019/08/23_Vida-Estilos_04_1p01-2.jpg" alt="depresion" width="500" height="300"><br><br>
@@ -70,7 +97,15 @@
             <a href="6008181000">600 818 1000</a>
             <br>
         
+        <!-- 36<= puntos <=42 -->
         {% elif puntaje >= 36 and puntaje <= 42 %}
+        <style>
+            .d{font-size:20px}
+            .a{border-radius:20px;}
+        </style>
+        <br>
+        <div class="container a" style="background-color: white;">
+            <br>
             Has obtenido{{puntaje}} !!<br>
             Tu salud mental está en perfectas condiciones. ¡Sigue así!.
             <img src="https://www.enamorando.me/wp-content/uploads/2019/08/mental.jpg" alt="depresion" width="500" height="300"><br><br>
@@ -90,7 +125,8 @@
             <a href="6008181000">600 818 1000</a>
             <br>
         {%endif%}
-
+        </div>
+        <br>
     {% else %}
         <div class="alert alert-primary" role="alert">
             Necesitas iniciar sesión.
