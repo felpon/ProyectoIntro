@@ -12,4 +12,7 @@ urlpatterns = [
     path("formulario/", views.formulario, name="formulario"),
     path("info/", views.info, name="info"),
     path("mensaje/", views.mensajepost, name="mensaje"),
+    path("historialformulario/", views.formHisto, name="Histform"),
+    path("informacion/", views.informacion, name="informacion"),
+    path("sobrenosotros/", views.sobrenosotros, name="sobrenosotros"),
 ]

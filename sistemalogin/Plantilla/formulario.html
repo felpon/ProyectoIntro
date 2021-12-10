@@ -4,13 +4,15 @@
 {% block content %}
 {% if user.is_authenticated %}
 
-<!-- . para class, # para id-->''
+<!-- . para class, # para id-->
 <style>
     .d{font-size:20px}
     .a{border-radius:20px;}
 </style>
-
+<br>
 <div class="container a" style="background-color: white;">
+    <br>
+    <font size=4><p style="text-align: justify;"><b>IMPORTANTE:</b><i> este formulario NO es un diagnóstico, esta herramienta es meramente orientativa. Este cuestionario está diseñado para responderlo periódicamente, logrando de esta forma reflejar como te has sentido las últimas semanas. Si luego de responder crees que los resultados realmente muestran de una manera correcta como te sientes, siempre es recomendable buscar ayuda profesional con un especialista en el área.</i></font>
     <form action="" class="Formulario" method="post"> 
         {% csrf_token %}
         <ol>
@@ -30,9 +32,9 @@
             <li class="d">¿Te sientes capaz de lograr tus objetivos de esta semana?</li>
             <select class="form-select" aria-label="Default select example" name="preg2" required="" id="id_preg2">
                 <option selected>Seleccione una respuesta</option>
-                <option value="0">Capaz</option>
+                <option value="0">Incapaz</option>
                 <option value="1">Quizás</option>
-                <option value="2">Incapaz</option>
+                <option value="2">Capaz</option>
             </select>
 
             <br>
@@ -140,8 +142,8 @@
             <select class="form-select" aria-label="Default select example" name="preg12" required="" id="id_preg12">
                 <option selected>Seleccione una respuesta</option>
                 <option value="0">Ha sido peor</option>
-                <option value="1">Un poco mejor</option>
-                <option value="2">Igual que la semana anterior</option>
+                <option value="1">Igual que la semana anterior</option>
+                <option value="2">Un poco mejor</option>
                 <option value="3">Ha mejorado mucho </option>
             </select>
 

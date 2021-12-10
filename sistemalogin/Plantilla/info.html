@@ -14,7 +14,8 @@
                 <form action="" method="post">
                     <br>
                     {% csrf_token %}
-                    <li>Fecha: {{form.time }} /// Puntaje: {{form.puntaje}} <pi>&nbsp;&nbsp;&nbsp;</pi> <button type="submit" name="id" class="btn btn-primary btn-sm" value={{form.id}}>Revisar mensaje</button></li>
+                    <li>Fecha: {{form.time }} /// Puntaje: {{form.puntaje}} <pi>&nbsp;&nbsp;&nbsp;</pi> <button type="submit" name="puntaje" class="btn btn-primary btn-sm" value={{form.id}}>Revisar mensaje</button><pi>&nbsp;&nbsp;&nbsp;</pi><button type="submit" name="Formulario" class="btn btn-secondary btn-sm" value={{form.id}}>Ver formulario</button>
+                    <br>
                 <br>
                 </form>
             </div>

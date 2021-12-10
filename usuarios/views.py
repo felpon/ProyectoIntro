@@ -1,3 +1,4 @@
+from django.db.models.query import prefetch_related_objects
 from django.forms.forms import Form
 from django.shortcuts import redirect, render
 from django.contrib import messages
@@ -83,14 +84,31 @@ def mhistorial(request,id):
 	else:
 		return redirect("home")
 
+def formHisto(request,id):
+	if authenticate:
+		perfil = Formu.objects.filter(id=id)
+		perfil = perfil[0]
+		return render(request, "formuhisto.html", {"perfil":perfil})
+	else:
+		return redirect("home")
 
 def	info(request):
 	if request.method == "POST":
-		id = request.POST.get("id")
-		return mhistorial(request,id)
+		if request.POST.get("puntaje"):
+			id = request.POST.get("puntaje")
+			return mhistorial(request,id)
+		if request.POST.get("Formulario"):
+			id = request.POST.get("Formulario")
+			return formHisto(request,id)
 	if authenticate:
 		current_user = get_object_or_404(User, pk=request.user.pk)
 		info = Formu.objects.filter(user=current_user)
 		return render(request, "info.html", {"info":info})
 	else:
 		return redirect("home")
+
+def informacion(request):
+	return render(request, 'informacion.html')
+
+def sobrenosotros(request):
+	return render(request, 'sobrenosotros.html')

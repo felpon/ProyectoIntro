@@ -57,8 +57,8 @@ op9 = [
 ]
 op10 = [
 	[0, "Ha sido peor"],
-	[1, "Un poco mejor"],
-	[2, "igual que la semana anterior"],
+	[1, "Igual que la semana anterior"],
+	[2, "Un poco mejor"],
 	[3, "Ha mejorado mucho "],
 ]
 op11 = [
