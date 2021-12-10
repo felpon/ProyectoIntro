@@ -1,12 +1,10 @@
-from django.db.models.query import prefetch_related_objects
-from django.forms.forms import Form
+
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from .forms import UserRegisterForm, Formulario
 from django.contrib.auth import authenticate, login
 from .models import *
 from django.shortcuts import render, redirect, get_object_or_404
-import datetime
 
 def feed(request):
 	return render(request, 'Home.html')
@@ -93,6 +91,7 @@ def formHisto(request,id):
 		return redirect("home")
 
 def	info(request):
+	current_user = get_object_or_404(User, pk=request.user.pk)	
 	if request.method == "POST":
 		if request.POST.get("puntaje"):
 			id = request.POST.get("puntaje")
@@ -100,9 +99,8 @@ def	info(request):
 		if request.POST.get("Formulario"):
 			id = request.POST.get("Formulario")
 			return formHisto(request,id)
-	if authenticate:
-		current_user = get_object_or_404(User, pk=request.user.pk)
+	if current_user:
 		info = Formu.objects.filter(user=current_user)
 		return render(request, "info.html", {"info":info})
 	else:
-		return redirect("home")
+		return render(request, "info.html")
