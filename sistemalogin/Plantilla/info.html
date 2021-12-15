@@ -2,17 +2,24 @@
 {% block tittle %} {% endblock %}
 
 {% block content %}
-    {% if user.is_authenticated %}
-    <p></p>
-                    <p></p>
+    {% if user.is_authenticated %} 
+    
         {% for form in info %}
-            <div class="container" style="background-color: white;">
+        <br>
+        <style>
+            .a{border-radius:20px;}
+            .b{opacity: 0.83;}
+        </style>
+            <div class="container a b" style="background-color: white;">
                 <form action="" method="post">
+                    <br>
                     {% csrf_token %}
-                    
-                    <li>Fecha: {{form.time }} /// Puntaje: {{ form.puntaje }} <button type="submit" name="puntaje" value={{form.id}}>Ver mensaje </button> <button type="submit" name="Formulario" value={{form.id}}>Ver Formulario </button>
+                    <li>Fecha: {{form.time }} /// Puntaje: {{form.puntaje}} <pi>&nbsp;&nbsp;&nbsp;</pi> <button type="submit" name="puntaje" class="btn btn-primary btn-sm" value={{form.id}}>Revisar mensaje</button><pi>&nbsp;&nbsp;&nbsp;</pi><button type="submit" name="Formulario" class="btn btn-secondary btn-sm" value={{form.id}}>Ver formulario</button>
+                    <br>
+                <br>
                 </form>
             </div>
+            
         {% endfor %}
     {% else %}
         Necesitas iniciar sesión.

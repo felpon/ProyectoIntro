@@ -1,49 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% if user.is_authenticated %}
-<div class='container d-flex justify-content-center mt-5 col-md-10 col-xl-8'>
-  <div class="card shadow-4-strong mb-3">
-    <div class="row g-0">
-      <div class="Layout-sc-nxg1ff-0 profile-image-setting">
-        <div class="Layout-sc-nxg1ff-0 irkKdr">
-          <div class="Layout-sc-nxg1ff-0 SpXOZ">
-            <div>
-              <figure aria-label="Imagen de perfil" class="ScAvatar-sc-12n1gut-0 gNHAJv tw-avatar" dara-a-target="profile-image">
-                <img class="InjectLayout-sc-588ddc-0 hYROTF tw-image tw-image-avatar" alt="Imagen de perfil" src="https://static-cdn.jtvnw.net/jtv_user_pictures/93c9e193-e73f-4d6a-910d-323469ed6936-profile_image-300x300.png">
-        
-              </figure>
-            </div>
-          </div>
-        </div>
-      </div>
 
+<style>
+  .d{font-size:20px}
+  .a{border-radius:20px;}
+</style> 
 
-      <div class="col-md-7">
-        <div class="card-body">
-          <div class='row justify-content-center'>
-            
-            <h4 class="col-12 card-title text-center mb-4">{{ user.username }} {{user.apellido}}</h4>
-            <a class="navbar-brand" href="/info/">
-              <button type="button" class="btn btn-primary" data-mdb-toggle='modal' data-mdb-target='#loginModal'>
-                  <small>Historial de Formularios</small>
-              </button>
-            </a>
-            <a class='btn btn-danger btn-rounded col-5' href="{% url 'logout' %}">
-              <small>Cerrar Sesion</small>  
-            </a>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<br>
+<div class="container a text-center" style="background-color:white;">
+  <br> 
+  <h4 class="container" style="background-color:white;"><font size=10 face="Times New Roman">{{ user.username }} {{user.apellido}}</font></h4>
+  <a href="/info/" class="btn btn-primary" data-mdb-toggle='modal' data-mdb-target='#loginModal'>Historial de Formularios</a>
+  <a class='btn btn-danger btn-rounded col-5' href="{% url 'logout' %}">
+    <small>Cerrar Sesion</small>  
+  </a>
+<br><br>
 
 </div>
-{% else %}
-<div class="alert alert-primary" role="alert">
-    Necesitas iniciar sesión.
-</div>
 
-{% endif %}
+
+
+
+
 {% endblock %}

@@ -4,13 +4,15 @@
 {% block content %}
 {% if user.is_authenticated %}
 
-<!-- . para class, # para id-->''
+<!-- . para class, # para id-->
 <style>
     .d{font-size:20px}
     .a{border-radius:20px;}
 </style>
-
+<br>
 <div class="container a" style="background-color: white;">
+    <br>
+    <font size=4><p style="text-align: justify;"><b>IMPORTANTE:</b><i> este formulario NO es un diagnóstico, esta herramienta es meramente orientativa. Este cuestionario está diseñado para responderlo periódicamente, logrando de esta forma reflejar como te has sentido las últimas semanas. Si luego de responder crees que los resultados realmente muestran de una manera correcta como te sientes, siempre es recomendable buscar ayuda profesional con un especialista en el área.</i></font>
     <form action="" class="Formulario" method="post"> 
         {% csrf_token %}
         <ol>
@@ -124,7 +126,7 @@
 
             <br>
         
-            <li class="d">Si la respuesta anterior fue “si” o “más o menos”¿Afecta en tus quehacer de esta semana?, en caso contrario marcar casilla "Saltar"</li>
+            <li class="d">Si la respuesta anterior fue “mucho” o “más o menos”¿Afecta en tus quehacer de esta semana?, en caso contrario marcar casilla "Saltar"</li>
             <select class="form-select" aria-label="Default select example" name="preg11" required="" id="id_preg11">
                 <option selected>Seleccione una respuesta</option>
                 <option value="0">Mucho</option>
@@ -151,10 +153,10 @@
             <select class="form-select" aria-label="Default select example" name="preg13" required="" id="id_preg13">
                 <option selected>Seleccione una respuesta</option>
                 <option value="0">Casi no puedo dormir</option>
-                <option value="1">Duermo un poco menos</option>
-                <option value="2">Duermo lo mismo que siempre</option>
+                <option value="2">Duermo un poco menos</option>
+                <option value="4">Duermo lo mismo que siempre</option>
                 <option value="3">Estoy durmiendo un poco más</option>
-                <option value="4">Duermo mucho más que antes</option>
+                <option value="1">Duermo mucho más que antes</option>
             </select>
 
             <br>

@@ -2,9 +2,6 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<div class="alert alert-primary" role="alert">
-    Ya estas logeado.
-</div>
 
 {%else%}
     <p></p>
@@ -33,6 +30,5 @@
 			</div>
 		</div>		
 	</div>
-	
 {%endif%}
 {% endblock%}

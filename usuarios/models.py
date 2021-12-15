@@ -63,10 +63,10 @@ op10 = [
 ]
 op11 = [
 	[0, "Casi no puedo dormir"],
-	[1, "Duermo un poco menos"],
-	[2, "duermo lo mismo que siempre"],
-	[3, "estoy durmiendo un poco más"],
-	[4, "Duermo mucho más que antes"]
+	[1, "Duermo mucho más que antes"],
+	[2, "Duermo un poco menos"],
+	[3, "Estoy durmiendo un poco más"],
+	[4, "Duermo lo mismo que siempre"]
 ]    
 op12 = [
 	[0, "Siento que tengo muy poco tiempo"],
